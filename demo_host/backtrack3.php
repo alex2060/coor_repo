@@ -1,0 +1,38 @@
+
+<?php
+
+$trace=$_GET["trace"];
+$user=$_GET["user"];
+$hashword=$_GET["hashword"];
+$setion_id=$_GET["setion_id"];
+
+
+	include("config.php");
+
+
+		$sql ="SELECT * FROM `demo-host_backtrack_Ledger` WHERE `user` LIKE '".$user."' AND used LIKE 'T' AND `hashword` LIKE '".$hashword."' AND `setion_id` LIKE '".$setion_id."' AND `trace` LIKE  '".$trace."';";
+		$out="False";
+		
+		$result = $conn->query($sql);
+		if ($result->num_rows==1)
+		{
+			$out="True";
+		}
+
+
+
+
+
+
+
+?>
+
+<?php echo $out; ?>
+
+
+
+
+
+
+
+
